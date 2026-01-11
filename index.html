@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Utila – Free Online Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+body{
+  background:#f4f7ff;
+  color:#333;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:#2563eb;
+  color:#fff;
+}
+.header nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:70px 20px;
+  background:linear-gradient(135deg,#2563eb,#1e3a8a);
+  color:white;
+}
+.hero h1{
+  font-size:2.2rem;
+}
+.hero p{
+  margin-top:10px;
+}
+.cta{
+  margin-top:20px;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  background:#fff;
+  color:#1e40af;
+  font-weight:bold;
+  cursor:pointer;
+}
+.search-box{
+  margin-top:30px;
+}
+.search-box input{
+  padding:12px;
+  width:300px;
+  max-width:90%;
+  border-radius:25px;
+  border:none;
+}
+
+/* TOOLS */
+.tools{
+  padding:50px 20px;
+}
+.tools h2{
+  margin-top:50px;
+}
+.sub{
+  margin:10px 0 20px;
+  color:#555;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+.card:hover{
+  background:#2563eb;
+  color:#fff;
+  transform:translateY(-5px);
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:40px 20px;
+  background:#1e40af;
+  color:white;
+}
+.footer a{
+  color:#bfdbfe;
+  margin:0 10px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo"><strong>Utila</strong></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Your Daily Tools, All in One Place</h1>
+  <p>Convert, calculate, compress, and simplify your everyday tasks — fast and free.</p>
+  <button class="cta" onclick="document.getElementById('tools').scrollIntoView()">Explore Tools</button>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search a tool...">
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools" id="tools">
+
+  <h2>⏱ Utility Tools</h2>
+  <p class="sub">Time & productivity tools</p>
+  <div class="grid">
+    <div class="card">Stopwatch</div>
+    <div class="card">Countdown Timer</div>
+    <div class="card">Alarm Clock</div>
+    <div class="card">Digital Clock</div>
+    <div class="card">Calendar Tool</div>
+    <div class="card">To-Do List</div>
+    <div class="card">Notes App</div>
+    <div class="card">Pomodoro Timer</div>
+  </div>
+
+  <h2>🧮 Calculator Tools</h2>
+  <p class="sub">Fast & accurate calculators</p>
+  <div class="grid">
+    <div class="card">Simple Calculator</div>
+    <div class="card">Scientific Calculator</div>
+    <div class="card">BMI Calculator</div>
+    <div class="card">Age Calculator</div>
+    <div class="card">Percentage Calculator</div>
+    <div class="card">Loan EMI Calculator</div>
+    <div class="card">Currency Note Counter</div>
+    <div class="card">Time Calculator</div>
+    <div class="card">Speed Distance Calculator</div>
+  </div>
+
+  <h2>🔐 Security & Generator Tools</h2>
+  <p class="sub">Generate & secure data</p>
+  <div class="grid">
+    <div class="card">Password Generator</div>
+    <div class="card">Strong Password Checker</div>
+    <div class="card">Username Generator</div>
+    <div class="card">Random Number Generator</div>
+    <div class="card">Random Name Picker</div>
+    <div class="card">OTP Generator</div>
+    <div class="card">UUID Generator</div>
+    <div class="card">Hash Generator</div>
+  </div>
+
+  <h2>📝 Text Tools</h2>
+  <p class="sub">Edit & format text</p>
+  <div class="grid">
+    <div class="card">Word Counter</div>
+    <div class="card">Character Counter</div>
+    <div class="card">Case Converter</div>
+    <div class="card">Text Repeater</div>
+    <div class="card">Remove Extra Spaces</div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <h3>Utila</h3>
+  <p>Simplifying your digital life.</p>
+  <p>Email: <a href="mailto:nbudha679@gmail.com">nbudha679@gmail.com</a></p>
+  <div>
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Use</a>
+  </div>
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("keyup", () => {
+  const value = searchInput.value.toLowerCase();
+  cards.forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(value)
+      ? "block"
+      : "none";
+  });
+});
+</script>
+
+</body>
+  </html>
